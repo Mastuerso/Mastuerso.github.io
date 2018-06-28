@@ -1,0 +1,94 @@
+{
+    "Name": "Ruben Antonio Mendoza Cruz",
+    "Title": "RESUME",
+    "Mugshot": "cv_pic_bw.png",
+    "Graph": "psicTest_EN.svg",
+    "Contact": {
+        "birthday": "04.10.87",
+        "address": "Tlalpan, CDMX  C.P 1400",
+        "email": "antonio.credoz@gmail.com",
+        "website": "https://mastuerso.github.io",
+        "repo": "https://github.com/Mastuerso"
+    },
+    "Transcript" : {
+        "Objective" : "Objective",
+        "Languages" : "Languages",
+        "Education" : "Education", 
+        "School" : "School", 
+        "Acronym" : "Acronym", 
+        "Time Lapse" : "Time Lapse", 
+        "Career" : "Career",
+        "TechSummary" : "Technology Summary", 
+        "ProgrammingLanguages" : "Programming Languages", 
+        "DesignSoftware" : "Design Software", 
+        "IDETools" : "IDE Tools", 
+        "Systems" : "Systems", 
+        "Complementary" : "Complementary",
+        "Experience" : "Experience", 
+        "Job" : "Job", "Company" : "Company", 
+        "TimeLapse" : "Time Lapse", 
+        "Description" : "Description",
+        "OngoingProject" : "Ongoing project", 
+        "Task" : "Task", 
+        "Motivation" : "Motivation"
+    },
+    "Topics": {
+        "Objective" :  "Solve problems using my creative mind and technical abilities, improve productivity while keeping the best service quality possible.",
+        "Languages" : "Native Spanish speaker and Fluent English speaker [600@TOEFL]",
+        "Education": [{
+                "School": "Centro Universitario de Animación Arte y Multimedia",
+                "Acronym": "CUAAM",
+                "TimeLapse": "2006 - 2009",
+                "Career": "Bachelor's degree in videogame animation"
+            },
+            {
+                "School": "Instituto Politécnico Nacional",
+                "Acronym": "IPN",
+                "TimeLapse": "2009 - 2013",
+                "Career": "Control and automation engineering"
+            }
+        ],
+        "TechSummary": {
+            "ProgrammingLanguages": "C, C++, Python, HTML, CSS, Java Script, PHP, MySQL, Bash.",
+            "DesignSoftware": "Solidworks, Freecad, Blender, Adobe Creative Suite, Inkscape, Gimp,",
+            "IDETools": "Visual Studio Code, Git, Unreal Engine 4, Defold, Arduino, Scratch, MIT App Inventor",
+            "Systems": "Windows, Linux",
+            "Complementary": "Microsoft Office, Libre Office, Google Docs"
+        },
+        "Experience": [{
+                "Job": "Freelancer",
+                "Company": "",
+                "TimeLapse": "2013 - 2015",
+                "Description": "Graphic Designer, Web Developer, Video Producer, Computer service and maintenance Technician, 3D modeler."
+            },
+            {
+                "Job": "Prototyping engineer",
+                "Company": "Dronytech",
+                "TimeLapse": "2015 - 2017",
+                "Description": "Design experimental drones."
+            },
+            {
+                "Job": "Technology development professor.",
+                "Company": "127 Voltz",
+                "TimeLapse": "2015 - 2017",
+                "Description": "Development teacher of robotic prototypes for college level students."
+            },
+            {
+                "Job": "Technology development professor.",
+                "Company": "Capacitor",
+                "TimeLapse": "2017 - 2017",
+                "Description": "Development teacher of robotic prototypes for high school level students."
+            },
+            {
+                "Job": "Linux/Python/Web developer",
+                "Company": "Onikom and Blackecco Group",
+                "TimeLapse": "2017 - 2018",
+                "Description": "Develop software and advice on the construction of custom electronic hardware to be implemented all together."
+            }
+        ],
+        "OngoingProject": {
+            "Task": "Solo video game development",
+            "Motivation": "The topic alone is pretty interesting, now more so that the tools, best practices and design philosophies are widely shared. This is an adventure where the rewards may not be limited to knowledge and experience alone."
+        }
+    }
+}
