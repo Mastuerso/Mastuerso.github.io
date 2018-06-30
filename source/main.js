@@ -91,13 +91,20 @@ function buildPage(data) {
     //==============Building the website==============
     document.getElementsByClassName("header")[0].textContent = Title;
     document.getElementsByClassName("name")[0].textContent = Name;
-    document.getElementsByClassName("mugshot")[0].innerHTML = `
-    <img src = "assets/${Mugshot}"></img>`;
+    
+    document.getElementsByClassName("mugshot")[0].innerHTML = "";
+    let imgURL = "url(\'assets/" + Mugshot + "\')";
+    document.getElementsByClassName("mugshot")[0].style.backgroundImage = imgURL; 
+
     let contactDiv = document.getElementsByClassName("contact");
     for (let index = 0; index < contactDiv.length; index++) {
         contactDiv[index].innerHTML = contactCard;
     }
-    document.getElementsByClassName("spider")[0].innerHTML = `<img src = "assets/${Graph}"></img>`;
+    
+    document.getElementsByClassName("spider")[0].innerHTML = "";
+    let graphURL = "url(\'assets/" + Graph + "\')";
+    document.getElementsByClassName("spider")[0].style.backgroundImage = graphURL; 
+    
     let Content = document.getElementsByClassName("content")[0];
     Content.innerHTML = "";
     for (var [key, value] of Topics) {

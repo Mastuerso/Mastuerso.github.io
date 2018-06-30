@@ -1,55 +1,71 @@
-$mainColor: #ff2de3;
-$bgColor: #222222;
-$fontColor: white;
-$contrast: #0fff2f,
-#820fe0,
-#f1ee0c,
-#eb3544;
+@import 'txtStyle';
+$maincolor: #ff2de3;
+$bgcolor: #fff;
+$fontcolor: #444;
+$contrast:  #0fff2f, #820fe0, #f1ee0c, #eb3544;
 body {
     margin: 0;
 }
 
 body,
 html {
-    background-color: $bgColor;
-    font-family: 'Quicksand', sans-serif;
-    //font-weight: 700;
+    background-color: $bgcolor;
+    font-family: 'Arvo', serif;
+    font-weight: 700;
     font-size: 1.2em;
     height: 100%;
     padding: 4px;
 }
 
 .container {
-    .resume {
+    border-style: none;
+    .resume {                
+        display: flex;
+        flex-flow: column;
+        flex-flow: row wrap;
+        &>* {
+            flex: 1 100%;
+        }
         .header {
             text-align: right;
         }
-        border-style: none;
-        display: flex;
-        flex-flow: row wrap;
-        &>*{
-            flex: 1 100%;
-        }
-        .id-card .contact {
-            display: none;
+        .mugshot, .spider {
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: 50%;
+            background-size: contain;
+            min-width: 30%;
+            min-height: 250px;
+        }        
+        .id-card {
+            div {
+                flex: 1;
+            }
+            .contact {
+                display: none;
+            }
         }
     }
-    border-style: solid;
-    border-color: $mainColor;
-    border-width: 2px;
-    color: $fontColor;
+    //border-color: $maincolor;
+    //border-width: 2px;
+    color: $fontcolor;
     div {
         text-align: center;
         padding: 4px;
-        margin: 4px;
-        border-style: solid;
+        margin: 4px;        
+        border-style: none;
         border-width: 1px;
         @for $i from 1 through length($contrast) {
             &:nth-child(#{length($contrast)}n+#{$i}) {
                 border-color: nth($contrast, $i);
             }
         }
+        
     }
+}
+
+img {
+    max-height: 50%;
 }
 
 .language {
@@ -87,10 +103,9 @@ html {
         }
         .text {
             flex: 3;
-        }        
+        }
     }
 }
-
 
 /*
 @supports (display: grid) {
