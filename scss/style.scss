@@ -19,7 +19,7 @@ html {
 
 .container {
     border-style: none;
-    .resume {                
+    .resume {
         display: flex;
         flex-flow: column;
         flex-flow: row wrap;
@@ -36,7 +36,7 @@ html {
             background-size: contain;
             min-width: 30%;
             min-height: 250px;
-        }        
+        }
         .id-card {
             div {
                 flex: 1;
@@ -52,7 +52,7 @@ html {
     div {
         text-align: center;
         padding: 4px;
-        margin: 4px;        
+        margin: 4px;
         border-style: none;
         border-width: 1px;
         @for $i from 1 through length($contrast) {
@@ -60,7 +60,7 @@ html {
                 border-color: nth($contrast, $i);
             }
         }
-        
+
     }
 }
 
@@ -111,6 +111,6 @@ img {
 @supports (display: grid) {
     div {
       display: grid;
-    }  
+    }
 }
 */

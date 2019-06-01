@@ -4,7 +4,7 @@ jRequest.onload = function () {
     var resumeData = JSON.parse(jRequest.responseText);
     buildPage(resumeData);
 };
-jRequest.send()
+jRequest.send();
 
 function buildPage(data) {
     let Title = data.Title;
@@ -26,13 +26,13 @@ function buildPage(data) {
     //==============Objective==============
     let objText = data.Topics.Objective;
     //console.log(objText);
-    Topics.set("Objective", objText);    
+    Topics.set("Objective", objText);
     //==============Languages==============
     let langText = data.Topics.Languages;
     //console.log(langText);
-    Topics.set("Languages", langText);    
+    Topics.set("Languages", langText);
     //==============Education==============
-    let Education = data.Topics.Education;    
+    let Education = data.Topics.Education;
     //displayVals(Education);
     let eduText = "";
     for (let i = 0; i < Education.length; i++) {
@@ -91,20 +91,20 @@ function buildPage(data) {
     //==============Building the website==============
     document.getElementsByClassName("header")[0].textContent = Title;
     document.getElementsByClassName("name")[0].textContent = Name;
-    
+
     document.getElementsByClassName("mugshot")[0].innerHTML = "";
     let imgURL = "url(\'assets/" + Mugshot + "\')";
-    document.getElementsByClassName("mugshot")[0].style.backgroundImage = imgURL; 
+    document.getElementsByClassName("mugshot")[0].style.backgroundImage = imgURL;
 
     let contactDiv = document.getElementsByClassName("contact");
     for (let index = 0; index < contactDiv.length; index++) {
         contactDiv[index].innerHTML = contactCard;
     }
-    
+
     document.getElementsByClassName("spider")[0].innerHTML = "";
     let graphURL = "url(\'assets/" + Graph + "\')";
-    document.getElementsByClassName("spider")[0].style.backgroundImage = graphURL; 
-    
+    document.getElementsByClassName("spider")[0].style.backgroundImage = graphURL;
+
     let Content = document.getElementsByClassName("content")[0];
     Content.innerHTML = "";
     for (var [key, value] of Topics) {
@@ -115,8 +115,8 @@ function buildPage(data) {
             <div class="title">${Transcript[key]}</div>
             <div class="text">${value}</div>
         </div>
-        `;         
-      }
+        `;
+    }
 }
 
 function getKeys(container) {
