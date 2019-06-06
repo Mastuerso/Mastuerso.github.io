@@ -1,0 +1,91 @@
+{
+    "Main-Title": "Currículum vítae",
+    "Name": "Rubén Antonio Mendoza Cruz",
+    "Mugshot": "cv_pic_bw.png",
+    "Graph": "psicTest_EN.svg",
+    "Contact": {
+        "Birthday": "04.10.87",
+        "Address": "Tlalpan, CDMX  C.P 1400",
+        "Email": "antonio.credoz@gmail.com",
+        "Website": "https://mastuerso.github.io",
+        "Repository": "https://github.com/Mastuerso"
+    },
+    "Articles": [
+        {
+            "Title": "Objective",
+            "content": "Solve problems using my creative mind and technical abilities, improve productivity while keeping the best quality service possible."
+        },
+        {
+            "Title": "Languages",
+            "content": "Native Spanish speaker and Fluent English speaker [600@TOEFL]"
+        },
+        {
+            "Title": "Education",
+            "mini-Article": [
+                {
+                    "accent": "Bachelor's degree in videogame animation",
+                    "content": "@ Centro Universitario de Animación Arte y Multimedia (2006 - 2009)"
+                },
+                {
+                    "accent": "Control and automation engineering",
+                    "content": "@ Instituto Politécnico Nacional (2009 - 2013)"
+                }
+            ]
+        },
+        {
+            "Title": "Technology Summary",
+            "mini-Article": [
+                {
+                    "title": "Programming Languages:",
+                    "content": "C, C++, Python, HTML, CSS, Java Script, PHP, MySQL, Shell."
+                },
+                {
+                    "title": "Design Software:",
+                    "content": "Solidworks, Freecad, Blender, Adobe Creative Suite, Inkscape, Gimp."
+                },
+                {
+                    "title": "Developing tools:",
+                    "content": "Visual Studio Code, Git, Unreal Engine 4, Defold, Arduino, Scratch, MIT App Inventor."
+                },
+                {
+                    "title": "Enviorement:",
+                    "content": "Microsoft Windows and Debian based Linux Distros."
+                },
+                {
+                    "title": "Complementary:",
+                    "content": "Microsoft Office, Libre Office, Google Docs"
+                }
+            ]
+        },
+        {
+            "Title": "Experience",
+            "mini-Article": [
+                {
+                    "title": "2013 - 2015 Freelancer",
+                    "content": "Graphic Designer, Web Developer, Video Producer, Computer service and maintenance Technician, 3D modeler."
+                },
+                {
+                    "title": "2015 - 2017 Prototyping engineer @ Dronytech",
+                    "content": "Aid in the process to design experimental drones."
+                },
+                {
+                    "title": "2015 - 2017 Technology development professor. @ 127 Voltz",
+                    "content": "Development teacher of robotic prototypes for college level students."
+                },
+                {
+                    "title": "2017 - 2017 Technology development professor. @ Capacitor",
+                    "content": "Development teacher of robotic prototypes for high school level students."
+                },
+                {
+                    "title": "2017 - 2018 Linux/Python/Web developer @ Onikom and Blackecco Group",
+                    "content": "Develop software and advice on the construction of custom electronic hardware to be implemented all together."
+                }
+            ]
+        },
+        {
+            "Title": "Ongoing project",
+            "sub-title": "Solo video game development",
+            "content": "The topic alone is pretty interesting, now more so that the tools, best practices and design philosophies are widely shared. This is an adventure where the rewards may not be limited to knowledge and experience alone."
+        }
+    ]
+}
