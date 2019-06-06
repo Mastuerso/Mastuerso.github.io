@@ -1,150 +1,89 @@
-.title {
-  text-transform: uppercase;
-  font-size: 1.5em;
-  font-stretch: expanded;
-}
-
-.container .resume .content .text {
-  text-align: justify;
-  font-weight: 400;
-}
-
 body {
   margin: 0;
+  padding: 10px;
+  text-align: center;
+  color: black;
 }
 
-body,
-html {
-  background-color: #fff;
-  font-family: 'Arvo', serif;
-  font-weight: 700;
-  font-size: 1.2em;
-  height: 100%;
-  padding: 4px;
-}
-
-.container {
-  border-style: none;
-  color: #444;
-}
-
-.container .resume {
+body #resume {
+  border-width: 5px;
+  border-style: solid;
+  border-color: purple;
+  margin: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -ms-flex-flow: row wrap;
-      flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.container .resume > * {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 100%;
-          flex: 1 100%;
+body #resume > * {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 
-.container .resume .header {
+body #resume h1 {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
   text-align: right;
+  font-weight: bold;
 }
 
-.container .resume .mugshot, .container .resume .spider {
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: 50%;
-  background-size: contain;
-  min-width: 30%;
-  min-height: 250px;
+body #resume h2 {
+  font-weight: bold;
+  text-align: end;
+  letter-spacing: 0.1em;
 }
 
-.container .resume .id-card div {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+body #resume h3 {
+  letter-spacing: 1em;
 }
 
-.container .resume .id-card .contact {
-  display: none;
+body #resume h4, body #resume h5, body #resume h6 {
+  letter-spacing: 0.3em;
+  text-align: start;
 }
 
-.container div {
+body #resume #mugshot {
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
+  -ms-flex-preferred-size: 35%;
+      flex-basis: 35%;
+  height: auto;
+  max-width: 100%;
+  -o-object-position: right;
+     object-position: right;
+}
+
+body #resume #spider-chart {
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
+  -ms-flex-preferred-size: 65%;
+      flex-basis: 65%;
+}
+
+body #resume #id-card > p {
   text-align: center;
-  padding: 4px;
-  margin: 4px;
-  border-style: none;
-  border-width: 1px;
 }
 
-.container div:nth-child(4n+1) {
-  border-color: #0fff2f;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Josefin Slab', serif;
+  text-transform: uppercase;
+  color: darkslategray;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  background-color: aquamarine;
 }
 
-.container div:nth-child(4n+2) {
-  border-color: #820fe0;
+p {
+  font-family: 'Roboto', sans-serif;
+  text-align: justify;
 }
-
-.container div:nth-child(4n+3) {
-  border-color: #f1ee0c;
-}
-
-.container div:nth-child(4n+4) {
-  border-color: #eb3544;
-}
-
-img {
-  max-height: 50%;
-}
-
-.language {
-  border-radius: 8px 0 0 8px;
-  position: fixed;
-  top: 6%;
-  right: 0px;
-  width: 4%;
-  font-size: 50%;
-}
-
-@media (min-width: 640px) {
-  .container .resume .contact {
-    display: none;
-  }
-  .container .resume .id-card .contact {
-    display: block;
-  }
-  .container .resume .mugshot,
-  .container .resume .id-card,
-  .container .resume .spider {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-  }
-}
-
-@media (min-width: 768px) {
-  .topic {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .topic .title {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-  }
-  .topic .text {
-    -webkit-box-flex: 3;
-        -ms-flex: 3;
-            flex: 3;
-  }
-}
-
-/*
-@supports (display: grid) {
-    div {
-      display: grid;
-    }
-}
-*/
 /*# sourceMappingURL=style.css.map */

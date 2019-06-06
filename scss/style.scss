@@ -1,116 +1,70 @@
-@import 'txtStyle';
-$maincolor: #ff2de3;
-$bgcolor: #fff;
-$fontcolor: #444;
-$contrast:  #0fff2f, #820fe0, #f1ee0c, #eb3544;
 body {
     margin: 0;
-}
-
-body,
-html {
-    background-color: $bgcolor;
-    font-family: 'Arvo', serif;
-    font-weight: 700;
-    font-size: 1.2em;
-    height: 100%;
-    padding: 4px;
-}
-
-.container {
-    border-style: none;
-    .resume {
+    padding: 10px;
+    text-align: center;
+    color: black;
+    #resume {
+        border-width: 5px;
+        border-style: solid;
+        border-color: purple;
+        margin: 10px;
         display: flex;
-        flex-flow: column;
-        flex-flow: row wrap;
-        &>* {
-            flex: 1 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        > * {
+            order: 1;
         }
-        .header {
+        h1 {
+            order: -1;
             text-align: right;
+            font-weight: bold;
         }
-        .mugshot, .spider {
-            background-repeat: no-repeat;
-            background-size: 100%;
-            background-position: 50%;
-            background-size: contain;
-            min-width: 30%;
-            min-height: 250px;
+        h2 {
+            font-weight: bold;
+            text-align: end;
+            letter-spacing: 0.1em;
         }
-        .id-card {
-            div {
-                flex: 1;
-            }
-            .contact {
-                display: none;
-            }
+        h3 {
+            letter-spacing: 1em;
         }
-    }
-    //border-color: $maincolor;
-    //border-width: 2px;
-    color: $fontcolor;
-    div {
-        text-align: center;
-        padding: 4px;
-        margin: 4px;
-        border-style: none;
-        border-width: 1px;
-        @for $i from 1 through length($contrast) {
-            &:nth-child(#{length($contrast)}n+#{$i}) {
-                border-color: nth($contrast, $i);
-            }
+        h4 ,h5, h6 {
+            letter-spacing: 0.3em;
+            text-align: start;
+        }
+        #mugshot {
+            order: 0;
+            flex-basis: 35%;
+            height: auto;
+            max-width:100%;
+            object-position: right;
+        }
+        #spider-chart {
+            order: 0;
+            flex-basis: 65%;
+        }
+        #id-card > p {
+            text-align: center;
         }
 
     }
 }
 
-img {
-    max-height: 50%;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Josefin Slab', serif;
+    text-transform: uppercase;
+    color: darkslategray;
+    flex-basis: 100%;
+    background-color: aquamarine;
 }
 
-.language {
-    border-radius: 8px 0 0 8px;
-    position: fixed;
-    top: 6%;
-    right: 0px;
-    width: 4%;
-    font-size: 50%;
+p {
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
 }
 
-@media (min-width: 640px) {
-    .container {
-        .resume {
-            .contact {
-                display: none;
-            }
-            .id-card .contact {
-                display: block;
-            }
-            .mugshot,
-            .id-card,
-            .spider {
-                flex: 1;
-            }
-        }
-    }
-}
 
-@media (min-width: 768px) {
-    .topic {
-        display: flex;
-        .title {
-            flex: 1;
-        }
-        .text {
-            flex: 3;
-        }
-    }
-}
 
-/*
-@supports (display: grid) {
-    div {
-      display: grid;
-    }
-}
-*/
+
+
+
+

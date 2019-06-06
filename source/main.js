@@ -1,162 +1,89 @@
-var jRequest = new XMLHttpRequest();
-jRequest.open('GET', 'source/english.json');
-jRequest.onload = function () {
-    var resumeData = JSON.parse(jRequest.responseText);
-    buildPage(resumeData);
-};
-jRequest.send();
+var swap_language = document.getElementById("swap-language");
+var container = document.getElementById("resume");
+var languages = ["english", "spanish"];
+var json_counter = 0;
 
-function buildPage(data) {
-    let Title = data.Title;
-    let Name = data.Name;
-    let Mugshot = data.Mugshot;
-    let Graph = data.Graph;
-    //Contact Data
-    let contactCard = `
-    ${data.Contact.birthday} <br>
-    ${data.Contact.address} <br>
-    ${data.Contact.email} <br>
-    ${data.Contact.website} <br>
-    ${data.Contact.repo}
-    `;
-    //==============Content==============
-    //"Objective", "Languages", "Education", "TechSummary", "Experience", "OngoingProject"
-    let Transcript = data.Transcript;
-    let Topics = new Map();
-    //==============Objective==============
-    let objText = data.Topics.Objective;
-    //console.log(objText);
-    Topics.set("Objective", objText);
-    //==============Languages==============
-    let langText = data.Topics.Languages;
-    //console.log(langText);
-    Topics.set("Languages", langText);
-    //==============Education==============
-    let Education = data.Topics.Education;
-    //displayVals(Education);
-    let eduText = "";
-    for (let i = 0; i < Education.length; i++) {
-        eduText += `
-        <b>${Education[i].Career}</b> @ ${Education[i].School} (${Education[i].TimeLapse}) <br>
+LoadJsonFile(languages[json_counter]);
+
+swap_language.addEventListener("click", function () {
+    LoadJsonFile(languages[json_counter]);
+});
+
+function m_article_template(m_article){
+    var template = "";
+    for (let i = 0; i < m_article.length; i++) {
+        template += `
+        <section>
+            ${m_article[i].title ? "<h5>" + m_article[i].title + "</h5>" : ""}
+            <p>
+            ${(m_article[i].accent ? "<strong>" + m_article[i].accent + "</strong> " :  "")
+            + m_article[i].content}
+            </p>
+        </section>
         `;
     }
-    //console.log(eduText);
-    Topics.set("Education", eduText);
-    //==============Technology Summary==============
-    let techSummary = data.Topics.TechSummary;
-    //displayVals(techSummary);
-    let techTetx = `
-    <b>${Transcript.ProgrammingLanguages}:</b><br>
-    ${data.Topics.TechSummary.ProgrammingLanguages}<br>
-    <b>${Transcript.DesignSoftware}:</b><br>
-    ${data.Topics.TechSummary.DesignSoftware}<br>
-    <b>${Transcript.IDETools}:</b><br>
-    ${data.Topics.TechSummary.IDETools}<br>
-    <b>${Transcript.Systems}:</b><br>
-    ${data.Topics.TechSummary.Systems}<br>
-    <b>${Transcript.Complementary}:</b><br>
-    ${data.Topics.TechSummary.Complementary}<br>
+    return template;
+}
+
+function articles_template(articles){
+    var template = "";
+    for (let i = 0; i < articles.length; i++) {
+        template += `
+        <article>
+            <h3>${articles[i].Title}</h3>
+            ${articles[i]["sub-title"] ? "<h5>" + articles[i]["sub-title"] + "</h5>" : ""}
+            ${articles[i].content ? "<p>" + articles[i].content + "</p>" : ""}
+            ${articles[i]["mini-Article"] ? m_article_template(articles[i]["mini-Article"]) : ""}
+        </article>
+        `;
+    }
+    return template;
+}
+
+function renderHTML(data) {
+    swap_language.innerHTML = languages[json_counter];
+    //console.log(data["Main-Title"]);
+    container.innerHTML = `
+    <h1>${data["Main-Title"]}</h1>
+    <img id="mugshot" src="assets/${data.Mugshot}" alt="">
+    <section id="id-card">
+        <h2>${data.Name}</h2>
+        <p>${data.Contact.Birthday}</p>
+        <p>${data.Contact.Address}</p>
+        <p>${data.Contact.Email}</p>
+        <p>${data.Contact.Website}</p>
+        <p>${data.Contact.Repository}</p>
+    </section>
+    <img id="spider-chart" src="assets/${data.Graph}" alt="">
+    ${articles_template(data.Articles)}
     `;
-    //console.log(techTetx);
-    Topics.set("TechSummary", techTetx);
-    //==============Experience==============
-    let Experience = data.Topics.Experience;
-    //displayVals(Experience);
-    let expText = "";
-    for (let i = 0; i < Experience.length; i++) {
-        if (Experience[i].Company === "") {
-            expText += `
-            <b>${Experience[i].TimeLapse} ${Experience[i].Job}</b><br>
-            `;
+}
+
+function LoadJsonFile(language) {
+    //console.log(language);
+    var JRequest = new XMLHttpRequest();
+    JRequest.open(
+        "GET",
+        "./json/" + language + ".json"
+    );
+
+    JRequest.onload = function() {
+        if(JRequest.status >= 200 && JRequest.status < 400){
+            var JData = JSON.parse(JRequest.responseText);
+            //console.log(JData);
+            renderHTML(JData);
         } else {
-            expText += `
-            <b>${Experience[i].TimeLapse} ${Experience[i].Job} @ ${Experience[i].Company}</b><br>
-            `;
+            console.log("We connected to the server but it returned an error.");
         }
-        expText += ` ${Experience[i].Description}<br>
-        `;
+    };
+
+    JRequest.onerror = function() {
+        console.log("Connection error.");
+    };
+
+    JRequest.send();
+    json_counter ++;
+    if(json_counter >= languages.length){
+        json_counter = 0;
     }
-    //console.log(expText);
-    Topics.set("Experience", expText);
-    //==============Ongoing Project==============
-    let OngoingProject = data.Topics.OngoingProject;
-    //displayVals(Project);
-    let projText = `
-    <b>${OngoingProject.Task}</b><br>
-    ${OngoingProject.Motivation}
-    `;
-    //console.log(projText);
-    Topics.set("OngoingProject", projText);
-    //console.log(Topics);
-    //==============Building the website==============
-    document.getElementsByClassName("header")[0].textContent = Title;
-    document.getElementsByClassName("name")[0].textContent = Name;
-
-    document.getElementsByClassName("mugshot")[0].innerHTML = "";
-    let imgURL = "url(\'assets/" + Mugshot + "\')";
-    document.getElementsByClassName("mugshot")[0].style.backgroundImage = imgURL;
-
-    let contactDiv = document.getElementsByClassName("contact");
-    for (let index = 0; index < contactDiv.length; index++) {
-        contactDiv[index].innerHTML = contactCard;
-    }
-
-    document.getElementsByClassName("spider")[0].innerHTML = "";
-    let graphURL = "url(\'assets/" + Graph + "\')";
-    document.getElementsByClassName("spider")[0].style.backgroundImage = graphURL;
-
-    let Content = document.getElementsByClassName("content")[0];
-    Content.innerHTML = "";
-    for (var [key, value] of Topics) {
-        //console.log(Transcript[key]);
-        //console.log(key + ' = ' + value);
-        Content.innerHTML += `
-        <div class="topic">
-            <div class="title">${Transcript[key]}</div>
-            <div class="text">${value}</div>
-        </div>
-        `;
-    }
-}
-
-function getKeys(container) {
-    let counter = Object.keys(container).length;
-    let keysArray = [];
-    for (let i = 0; i < counter; i++) {
-        let key = Object.keys(container)[i];
-        //console.log("Key: " + key);
-        keysArray[i] = key;
-    }
-    return keysArray;
-}
-
-function getVals(container, keys) {
-    let vals = [];
-    for (let i = 0; i < keys.length; i++) {
-        let key = "" + keys[i];
-        //console.log(key);
-        vals[i] = container[key];
-        //console.log(container[key]);
-    }
-    return vals;
-}
-
-function displayVals(container, name = "") {
-    let parent = name;
-    let keys = getKeys(container);
-    let vals = getVals(container, keys);
-    for (let i = 0; i < keys.length; i++) {
-        if (typeof vals[i] === 'object') {
-            if (parent === "") {
-                console.log("===" + keys[i] + "===");
-            } else {
-                console.log("===" + parent + "." + keys[i] + "===");
-            }
-            displayVals(vals[i], keys[i]);
-        } else {
-            console.log(keys[i] + ": " + vals[i]);
-        }
-
-    }
-
 }
