@@ -5,87 +5,87 @@
     "Graph": "psicTest_EN.svg",
     "Contact": {
         "Birthday": "04.10.87",
-        "Address": "Tlalpan, CDMX  C.P 1400",
+        "Address": "Oaxaca, OAX  C.P 68030",
         "Email": "antonio.credoz@gmail.com",
         "Website": "https://mastuerso.github.io",
         "Repository": "https://github.com/Mastuerso"
     },
     "Articles": [
         {
-            "Title": "Objective",
-            "content": "Solve problems using my creative mind and technical abilities, improve productivity while keeping the best quality service possible."
+            "Title": "Meta",
+            "content": "Resolver dificultades usando técnica y creatividad, con el objetivo de optimizar productividad sin sacrificar la calidad del producto o la experiencia del usuario."
         },
         {
-            "Title": "Languages",
-            "content": "Native Spanish speaker and Fluent English speaker [600@TOEFL]"
+            "Title": "Idiomas",
+            "content": "Hablante Español nativo con un domino fluido del Ingles [600@TOEFL]."
         },
         {
-            "Title": "Education",
+            "Title": "Educación",
             "mini-Article": [
                 {
-                    "accent": "Bachelor's degree in videogame animation",
+                    "accent": "Lic. en Animación de videojuegos",
                     "content": "@ Centro Universitario de Animación Arte y Multimedia (2006 - 2009)"
                 },
                 {
-                    "accent": "Control and automation engineering",
+                    "accent": "Ing. en Control y Automatización",
                     "content": "@ Instituto Politécnico Nacional (2009 - 2013)"
                 }
             ]
         },
         {
-            "Title": "Technology Summary",
+            "Title": "Perfil tecnológico",
             "mini-Article": [
                 {
-                    "title": "Programming Languages:",
+                    "title": "Lenguajes de programación:",
                     "content": "C, C++, Python, HTML, CSS, Java Script, PHP, MySQL, Shell."
                 },
                 {
-                    "title": "Design Software:",
+                    "title": "Software de diseño:",
                     "content": "Solidworks, Freecad, Blender, Adobe Creative Suite, Inkscape, Gimp."
                 },
                 {
-                    "title": "Developing tools:",
+                    "title": "Herramientas para desarrollador:",
                     "content": "Visual Studio Code, Git, Unreal Engine 4, Defold, Arduino, Scratch, MIT App Inventor."
                 },
                 {
-                    "title": "Enviorement:",
-                    "content": "Microsoft Windows and Debian based Linux Distros."
+                    "title": "Ambiente en OS:",
+                    "content": "Microsoft Windows y distribuciones (Distro) basadas en Debian GNU Linux."
                 },
                 {
-                    "title": "Complementary:",
+                    "title": "Complementario:",
                     "content": "Microsoft Office, Libre Office, Google Docs"
                 }
             ]
         },
         {
-            "Title": "Experience",
+            "Title": "Experiencia",
             "mini-Article": [
                 {
-                    "title": "2013 - 2015 Freelancer",
-                    "content": "Graphic Designer, Web Developer, Video Producer, Computer service and maintenance Technician, 3D modeler."
+                    "title": "2013 - 2015 Desarrollador Independiente",
+                    "content": "Diseño gráfico, Desarrollo web, Producción de video, Servicio y mantenimiento técnico a computadoras y Diseño 3D."
                 },
                 {
-                    "title": "2015 - 2017 Prototyping engineer @ Dronytech",
-                    "content": "Aid in the process to design experimental drones."
+                    "title": "2015 - 2017 Ingeniero de diseño @ Dronytech",
+                    "content": "Diseño de drones experimentales."
                 },
                 {
-                    "title": "2015 - 2017 Technology development professor. @ 127 Voltz",
-                    "content": "Development teacher of robotic prototypes for college level students."
+                    "title": "2015 - 2017 Profesor de desarrollo tecnológico. @ 127 Voltz",
+                    "content": "Profesor enfocado al desarrollo de prototipos de robots para estudiantes de nivel universitario."
                 },
                 {
-                    "title": "2017 - 2017 Technology development professor. @ Capacitor",
-                    "content": "Development teacher of robotic prototypes for high school level students."
+                    "title": "2017 - 2017 Profesor de desarrollo tecnológico. @ Capacitor",
+                    "content": "Profesor enfocado al desarrollo de prototipos de robots para estudiantes de nivel secundaria."
                 },
                 {
-                    "title": "2017 - 2018 Linux/Python/Web developer @ Onikom and Blackecco Group",
-                    "content": "Develop software and advice on the construction of custom electronic hardware to be implemented all together."
+                    "title": "2017 - 2018 Programador @ Onikom y Blackecco Group",
+                    "content": "Desarrollador de software y consultor para la construccion de hardware personalizado para dicho software."
                 }
             ]
         },
         {
-            "Title": "Ongoing project",
-            "sub-title": "Solo video game development",
-            "content": "The topic alone is pretty interesting, now more so that the tools, best practices and design philosophies are widely shared. This is an adventure where the rewards may not be limited to knowledge and experience alone."
+            "Title": "Proyecto actual",
+            "sub-title": "Desarrollo de videojuego 'indi'",
+            "content": "El tema por si solo es muy interesante, ademas las herramientas así como las praxis de desarrollo son libremente compartidas y por si fuera poco la comunidad que se encuentran junto a este tipo de proyecto es global lo cual es augurio de grandes recompensas (⌐■_■)"
         }
     ]
 }
