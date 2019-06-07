@@ -1,4 +1,5 @@
 var swap_language = document.getElementById("swap-language");
+var download_doc = document.getElementById("download");
 var container = document.getElementById("resume");
 var languages = ["english", "spanish"];
 var json_counter = 0;
@@ -7,6 +8,19 @@ LoadJsonFile(languages[json_counter]);
 
 swap_language.addEventListener("click", function () {
     LoadJsonFile(languages[json_counter]);
+});
+
+download_doc.addEventListener("click", function() {
+    if(window.confirm("(づ｡◕‿‿◕｡)づ \n    ¿Save?")){
+        html2canvas(document.getElementById("resume")).then(canvas => {
+            //document.body.appendChild(canvas)       
+            console.log(canvas.width);
+            console.log(canvas.height);
+            var image = canvas.toDataURL().replace("image/png", "image/octet-stream");
+            //console.log(image);
+            window.location.href = image;
+        });        
+    }
 });
 
 function m_article_template(m_article){
@@ -45,7 +59,11 @@ function renderHTML(data) {
     //console.log(data["Main-Title"]);
     container.innerHTML = `
     <h1>${data["Main-Title"]}</h1>
-    <img id="mugshot" src="assets/${data.Mugshot}" alt="">
+    <div id="img-holder">
+        <img id="mugshot" src="assets/${data.Mugshot}" alt="">
+        <img id="spider-chart" src="assets/${data.Graph}" alt="">
+    </div>
+        
     <section id="id-card">
         <h2>${data.Name}</h2>
         <p>${data.Contact.Birthday}</p>
@@ -53,8 +71,7 @@ function renderHTML(data) {
         <p>${data.Contact.Email}</p>
         <p>${data.Contact.Website}</p>
         <p>${data.Contact.Repository}</p>
-    </section>
-    <img id="spider-chart" src="assets/${data.Graph}" alt="">
+    </section>    
     ${articles_template(data.Articles)}
     `;
 }

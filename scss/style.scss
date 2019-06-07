@@ -29,7 +29,8 @@ body {
         }
     }
     #resume {
-        margin: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
@@ -68,19 +69,25 @@ body {
                 flex-basis: 40%;
             }
         }
+        #img-holder {
+            display: flex;
+            flex: 1 1 100%;
+        }
         #mugshot {
-            order: 0;
+            //order: 0;
             flex-basis: 35%;
-            flex-grow: 1;
-            max-width: 150px;
-            height: auto;
+            width: 100%;
+            max-width: 200px;
+            height: 100%;
+            border-radius: 50%;
         }
         #spider-chart {
-            order: 0;
+            //order: 0;
             flex-grow: 1;
             flex-basis: 65%;
             height: auto;
-            max-width: 300px;
+            max-height: 200px;
+            width: auto;
             object-position: right;
         }
 
@@ -95,15 +102,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p, footer {
-    font-family: 'Nanum Pen Script', cursive;
+    font-family: 'Gloria Hallelujah', cursive;
     text-align: justify;
+    font-size: 1em;
 }
 
 footer {
-    font-size: 0.8em;
+    font-size: 0.7em;
     color: gray;
     margin: 0px 30px 10px 30px;
-    max-width: 450px;
+    text-align: center;
 }
 
 /* unvisited link */
@@ -124,11 +132,4 @@ color: hotpink;
 /* selected link */
 a:active {
 color: lightseagreen;
-} 
-
-
-
-
-
-
-
+}
