@@ -41,7 +41,7 @@ function articles_template(articles){
 }
 
 function renderHTML(data) {
-    swap_language.innerHTML = languages[json_counter];
+    //swap_language.innerHTML = languages[json_counter];
     //console.log(data["Main-Title"]);
     container.innerHTML = `
     <h1>${data["Main-Title"]}</h1>

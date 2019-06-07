@@ -1,18 +1,43 @@
+html {
+    display: flex;
+    justify-content: center;
+}
 body {
-    margin: 0;
-    padding: 10px;
+    margin: 0px;
+    margin-top: 30px;
+    padding: 0px;
     text-align: center;
     color: black;
+    max-width: 550px;
+    nav {
+        position: fixed;
+        top: 15px;
+        right: 0px;
+        width: auto;
+        button {
+            background-color: transparent;
+            border: none;
+            img{
+                width: 40px;
+                height: 40px;
+            }
+            &:hover {
+                img {
+                  transform: scale(1.1);
+                }
+            }            
+        }
+    }
     #resume {
-        border-width: 5px;
-        border-style: solid;
-        border-color: purple;
         margin: 10px;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         > * {
             order: 1;
+        }
+        article {
+            flex-basis: 100%;
         }
         h1 {
             order: -1;
@@ -25,42 +50,81 @@ body {
             letter-spacing: 0.1em;
         }
         h3 {
-            letter-spacing: 1em;
+            letter-spacing: .6em;
         }
         h4 ,h5, h6 {
             letter-spacing: 0.3em;
             text-align: start;
         }
+        #id-card {
+            display: flex;
+            flex-wrap: wrap;
+            p {
+                text-align: center;
+                flex: 1 1;
+                margin: 2px;
+                padding-left: 6px;
+                padding-right: 6px;
+                flex-basis: 40%;
+            }
+        }
         #mugshot {
             order: 0;
             flex-basis: 35%;
+            flex-grow: 1;
+            max-width: 150px;
             height: auto;
-            max-width:100%;
-            object-position: right;
         }
         #spider-chart {
             order: 0;
+            flex-grow: 1;
             flex-basis: 65%;
-        }
-        #id-card > p {
-            text-align: center;
+            height: auto;
+            max-width: 300px;
+            object-position: right;
         }
 
     }
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Josefin Slab', serif;
+    flex-basis: 100%;
+    font-family: 'Roboto Slab', serif;
     text-transform: uppercase;
     color: darkslategray;
-    flex-basis: 100%;
-    background-color: aquamarine;
 }
 
-p {
-    font-family: 'Roboto', sans-serif;
+p, footer {
+    font-family: 'Nanum Pen Script', cursive;
     text-align: justify;
 }
+
+footer {
+    font-size: 0.8em;
+    color: gray;
+    margin: 0px 30px 10px 30px;
+    max-width: 450px;
+}
+
+/* unvisited link */
+a:link {
+color: goldenrod;
+}
+
+/* visited link */
+a:visited {
+color: purple;
+}
+
+/* mouse over link */
+a:hover {
+color: hotpink;
+}
+
+/* selected link */
+a:active {
+color: lightseagreen;
+} 
 
 
 
