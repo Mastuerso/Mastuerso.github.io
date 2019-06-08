@@ -10,8 +10,10 @@ body {
     nav {
         position: fixed;
         top: 15px;
+        display: flex;
+        justify-content: flex-end;
         width: 100%;
-        margin-left: 30%;
+        max-width: inherit;
         button {
             background-color: transparent;
             border: none;

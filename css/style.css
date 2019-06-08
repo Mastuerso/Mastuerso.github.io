@@ -17,8 +17,14 @@ body {
 body nav {
   position: fixed;
   top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   width: 100%;
-  margin-left: 30%;
+  max-width: inherit;
 }
 
 body nav button {

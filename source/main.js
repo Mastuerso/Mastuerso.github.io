@@ -2,6 +2,7 @@ var swap_language = document.getElementById("swap-language");
 var download_doc = document.getElementById("download");
 var container = document.getElementById("resume");
 var languages = ["english", "spanish"];
+var canvas_name =["planos_estrella_de_la_muerte.png", "death_star_plans.png"];
 var json_counter = 0;
 
 LoadJsonFile(languages[json_counter]);
@@ -33,7 +34,8 @@ download_doc.addEventListener("click", function() {
             xhr.onload = function () {
                 let a = document.createElement('a');
                 a.href = window.URL.createObjectURL(xhr.response);
-                a.download = 'death_star_plans.png';
+                //a.download = 'death_star_plans.png';
+                a.download = canvas_name[json_counter];
                 a.style.display = 'none';
                 document.body.appendChild(a);
                 a.click();
