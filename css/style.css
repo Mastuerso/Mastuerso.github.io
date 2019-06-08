@@ -8,12 +8,9 @@ html {
 }
 
 body {
-  margin: 0px;
   margin-top: 30px;
-  padding: 0px;
   text-align: center;
   color: black;
-  max-width: 550px;
 }
 
 body nav {
@@ -39,8 +36,12 @@ body nav button:hover img {
 }
 
 body #resume {
-  margin-left: 10px;
-  margin-right: 10px;
+  padding: 0px 40px 0px 20px;
+  border-style: solid;
+  border-color: transparent;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

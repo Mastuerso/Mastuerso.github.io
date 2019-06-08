@@ -13,13 +13,36 @@ swap_language.addEventListener("click", function () {
 download_doc.addEventListener("click", function() {
     if(window.confirm("(づ｡◕‿‿◕｡)づ \n    ¿Save?")){
         html2canvas(document.getElementById("resume")).then(canvas => {
-            //document.body.appendChild(canvas)       
+            //document.body.appendChild(canvas)
             console.log(canvas.width);
             console.log(canvas.height);
             var image = canvas.toDataURL().replace("image/png", "image/octet-stream");
-            //console.log(image);
-            window.location.href = image;
-        });        
+            //window.location.href = image;
+
+            /*
+            let link = document.createElement("a");
+            link.setAttribute("download", "deathStarPlans.png");
+            link.setAttribute("href", image);
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            */
+
+            let xhr = new XMLHttpRequest();
+            xhr.responseType = 'blob';
+            xhr.onload = function () {
+                let a = document.createElement('a');
+                a.href = window.URL.createObjectURL(xhr.response);
+                a.download = 'death_star_plans.png';
+                a.style.display = 'none';
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+            };
+            xhr.open('GET', image); // This is to download the canvas Image
+            xhr.send();
+
+        });
     }
 });
 
@@ -63,7 +86,7 @@ function renderHTML(data) {
         <img id="mugshot" src="assets/${data.Mugshot}" alt="">
         <img id="spider-chart" src="assets/${data.Graph}" alt="">
     </div>
-        
+
     <section id="id-card">
         <h2>${data.Name}</h2>
         <p>${data.Contact.Birthday}</p>
@@ -71,7 +94,7 @@ function renderHTML(data) {
         <p>${data.Contact.Email}</p>
         <p>${data.Contact.Website}</p>
         <p>${data.Contact.Repository}</p>
-    </section>    
+    </section>
     ${articles_template(data.Articles)}
     `;
 }
