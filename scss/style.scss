@@ -1,19 +1,25 @@
-html {
+html{
+    width: 100%;
     display: flex;
     justify-content: center;
+    opacity: 1;
 }
-body {
+body {    
     margin-top: 30px;
     text-align: center;
     color: black;
     max-width: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     nav {
+        //width: inherit;
+        align-self: flex-end;
         position: fixed;
         top: 15px;
         display: flex;
         justify-content: flex-end;
-        width: 100%;
-        max-width: inherit;
+        //max-width: inherit;
         button {
             background-color: transparent;
             border: none;
@@ -35,10 +41,11 @@ body {
     }
     #resume {
         //border-width: 0px 20px;
-        padding: 0px 40px 0px 20px;
-        border-style: solid;
-        border-color: transparent;
-        flex: 1 1;
+        //padding: 0px 20px;
+        //border: 20px;
+        //border-style: solid;
+        //border-color: transparent;
+        flex: 1 1 100%;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
@@ -78,23 +85,27 @@ body {
             }
         }
         #img-holder {
-            flex-basis: 100%;
+            flex: 1 1 auto;
             display: flex;
-            justify-content: flex-end;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            //align-content: space-around;
+            #mugshot {
+                //order: 0;
+                //flex-basis: 40%;
+                max-width: 200px;
+                flex: 1 1 50%;
+                border-radius: 50%;
+            }
+            #spider-chart {
+                width: 100%;
+                min-width: 300px;
+                margin: 12px;
+                flex: 0 1 50%;
+            }
         }
-        #mugshot {
-            //order: 0;
-            flex-basis: 40%;
-            width: 100%;
-            max-width: 200px;
-            border-radius: 50%;
-        }
-        #spider-chart {
-            //order: 0;
-            flex-basis: 50%;
-            //height: auto;
-            max-height: 200px;
-        }
+        
 
     }
 }
