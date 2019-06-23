@@ -68,7 +68,7 @@ function articles_template(articles){
     var template = "";
     for (let i = 0; i < articles.length; i++) {
         template += `
-        <article id="${articles[i].Title}">
+        <article id="article-${i}">
             <h3>${articles[i].Title}</h3>
             ${articles[i]["sub-title"] ? "<h5>" + articles[i]["sub-title"] + "</h5>" : ""}
             ${articles[i].content ? "<p>" + articles[i].content + "</p>" : ""}
