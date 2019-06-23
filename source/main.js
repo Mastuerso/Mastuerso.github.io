@@ -68,7 +68,7 @@ function articles_template(articles){
     var template = "";
     for (let i = 0; i < articles.length; i++) {
         template += `
-        <article>
+        <article id="${articles[i].Title}">
             <h3>${articles[i].Title}</h3>
             ${articles[i]["sub-title"] ? "<h5>" + articles[i]["sub-title"] + "</h5>" : ""}
             ${articles[i].content ? "<p>" + articles[i].content + "</p>" : ""}
@@ -83,10 +83,14 @@ function renderHTML(data) {
     //swap_language.innerHTML = languages[json_counter];
     //console.log(data["Main-Title"]);
     container.innerHTML = `
-    <h1>${data["Main-Title"]}</h1>
+    <h1 id="cv">${data["Main-Title"]}</h1>
     <div id="img-holder">
-        <img id="mugshot" src="assets/${data.Mugshot}" alt="">
-        <img id="spider-chart" src="assets/${data.Graph}" alt="">
+        <div id="mugshot_slot">
+            <img id="mugshot" src="assets/${data.Mugshot}" alt="">
+        </div>
+        <div id="graph_slot">
+        
+        </div>
     </div>
 
     <section id="id-card">
@@ -99,6 +103,29 @@ function renderHTML(data) {
     </section>
     ${articles_template(data.Articles)}
     `;
+    //<img id="spider-chart" src="assets/${data.Graph}" alt=""></img>
+    //console.log(data.Graph);
+    
+    loadSVG(`../assets/${data.Graph}`, "graph_slot", spiderChart); 
+    
+    
+    for (let i = 0; i < container.childNodes.length; i++) {
+        if (container.childNodes[i].id !== undefined) {
+            //console.log(container.childNodes[i].id);
+            if (container.childNodes[i].id != "img-holder") {
+                fade_in(`#${container.childNodes[i].id}`, 1500, 500);                            
+            } else {
+                for (let ii = 0; ii < container.childNodes[i].children.length; ii++) {                    
+                    //console.log(container.childNodes[i].children[ii].id);                    
+                    if(container.childNodes[i].children[ii].id != "graph_slot") {
+                        fade_in(`#${container.childNodes[i].children[ii].id}`, 1500, 500);
+                    }
+                }                
+            }            
+        }        
+        
+    }
+    
 }
 
 function LoadJsonFile(language) {
